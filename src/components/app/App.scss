@@ -1,0 +1,18 @@
+.App {
+  margin: 0 auto;
+  width: 1200px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  & > h1 {
+    margin-top: 40px;
+
+    & > a {
+      color: rgb(111, 0, 255);
+      font-size: 12px;
+      font-weight: 300;
+    }
+  }
+}
