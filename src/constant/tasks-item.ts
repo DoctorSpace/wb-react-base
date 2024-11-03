@@ -30,6 +30,11 @@ export const tasksItem: ITasksItem[] = [
         title: "Задание № 3",
         url: "https://github.com/DoctorSpace/wb-react-base/tree/main/src/tasks/task-3",
       },
+      {
+        number: 4,
+        title: "Задание № 4",
+        url: "https://github.com/DoctorSpace/wb-react-base/tree/main/src/tasks/task-4",
+      },
     ],
   },
 ];
