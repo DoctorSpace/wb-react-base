@@ -1,0 +1,1 @@
+{"root":["./src/main.tsx","./src/vite-env.d.ts","./src/components/app/app.tsx","./src/components/materials-items/materialsitems.tsx","./src/components/materials-tree/materialstree.tsx","./src/constant/tasks-item.ts","./src/tasks/task-1/task-1.ts","./src/tasks/task-2/task-2.ts","./src/tasks/task-3/task-3.ts","./src/tasks/task-4/task-4.ts"],"version":"5.6.3"}
