@@ -1,10 +1,17 @@
 .materials-items {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
 
   &__task {
     display: flex;
+    align-self: flex-start;
     align-items: center;
     justify-content: space-between;
 
@@ -12,7 +19,43 @@
     background-color: #f2faff;
     border-radius: 8px;
     padding: 10px 20px;
-    width: 400px;
+    width: 100%;
+
+    &-buttons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      & > button {
+        cursor: pointer;
+        border: none;
+        color: #0047b2;
+        background-color: #f2faff;
+
+        &:hover {
+          color: rgb(111, 0, 255);
+        }
+      }
+
+      & > img {
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &__exam {
+    display: flex;
+    align-self: flex-end;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #0047b2;
+    background-color: #f2faff;
+    border-radius: 8px;
+    padding: 10px 20px;
+    width: 100%;
 
     &-buttons {
       display: flex;

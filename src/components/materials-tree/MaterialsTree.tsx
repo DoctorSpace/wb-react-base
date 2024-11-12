@@ -12,7 +12,7 @@ export const MaterialsTree = () => {
             <h3>{item.number}</h3>
             <h2>{item.title}</h2>
           </div>
-          <MaterialsItems tasks={item.tasks} />
+          <MaterialsItems tasks={item.tasks} exam={item.exam} />
         </>
       ))}
     </div>
