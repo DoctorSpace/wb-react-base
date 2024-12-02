@@ -47,4 +47,16 @@ export const tasksItem: ITasksItem[] = [
       },
     ],
   },
+  {
+    number: 2,
+    title: "React. Краткий обзор библиотеки",
+    exam: [],
+    tasks: [
+      {
+        number: 5,
+        title: "Задание № 5",
+        url: "https://github.com/DoctorSpace/wb-react-base/tree/main/src/tasks/task-5",
+      }
+    ],
+  },
 ];
