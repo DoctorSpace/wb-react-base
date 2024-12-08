@@ -2,47 +2,44 @@ document.addEventListener("DOMContentLoaded", function () {
   type VirtualNode = {
     tag: string;
     attrs?: Record<string, string>;
-    children?: (VirtualNode | string)[]; // Включает как строки, так и другие VirtualNode
+    children?: (VirtualNode | string)[];
   };
 
-  // Функция для загрузки JSON-данных с сервера
   function loadJson() {
-    fetch("/component.json") // Путь к вашему файлу component.json
+    fetch("/component.json")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to load component.json");
         }
-        return response.json(); // Парсим JSON из ответа
+        return response.json();
       })
       .then((json: VirtualNode) => {
-        renderVirtualDOM(json); // Рендерим виртуальный DOM
+        renderVirtualDOM(json);
       })
       .catch((error) => {
         console.error("Error loading JSON:", error);
       });
   }
 
-  // Функция для создания элемента из виртуального узла
   function createElement(vNode: VirtualNode | string): Node {
     if (typeof vNode === "string") {
-      return document.createTextNode(vNode); // Возвращаем текстовый узел
+      return document.createTextNode(vNode);
     }
 
-    const element = document.createElement(vNode.tag); // Создаем элемент по тегу
+    const element = document.createElement(vNode.tag);
     if (vNode.attrs) {
       for (const [key, value] of Object.entries(vNode.attrs)) {
-        element.setAttribute(key, value); // Устанавливаем атрибуты
+        element.setAttribute(key, value);
       }
     }
     if (vNode.children) {
       vNode.children.forEach((child) => {
-        element.appendChild(createElement(child)); // Рекурсивно добавляем дочерние элементы
+        element.appendChild(createElement(child));
       });
     }
     return element;
   }
 
-  // Функция для рендеринга виртуального DOM
   function renderVirtualDOM(json: VirtualNode): void {
     const app = document.getElementById("app");
     if (!app) {
@@ -50,12 +47,11 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    app.innerHTML = ""; // Очищаем контейнер
-    const element = createElement(json); // Создаем элемент
-    app.appendChild(element); // Добавляем элемент в контейнер
+    app.innerHTML = "";
+    const element = createElement(json);
+    app.appendChild(element);
   }
 
-  // Загружаем и рендерим виртуальный DOM сразу после загрузки страницы
   loadJson();
 });
 
