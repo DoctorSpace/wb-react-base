@@ -54,8 +54,21 @@ export const tasksItem: ITasksItem[] = [
     tasks: [
       {
         number: 5,
-        title: "Задание № 5",
+        title: "Задание № 5: Virtual DOM",
         url: "https://github.com/DoctorSpace/wb-react-base/tree/main/src/tasks/task-5",
+      }
+    ],
+  },
+  {
+    number: 3,
+    title: "JSX, шабло­ни­за­ция, рен­де­ринг эле­мен­тов",
+    exam: [],
+    tasks: [
+      {
+        number: 6,
+        title: "Задание № 6: игровой инвентарь",
+        url: "https://github.com/DoctorSpace/wb-rb-inventory",
+        url_demo: "https://doctorspace.github.io/wb-rb-inventory/",
       }
     ],
   },
